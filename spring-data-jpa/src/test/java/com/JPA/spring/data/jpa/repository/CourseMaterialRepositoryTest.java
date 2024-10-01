@@ -17,6 +17,9 @@ class CourseMaterialRepositoryTest {
     @Autowired
     private CourseMaterialRepository courseMaterialRepository;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
     @Test
     public void saveCourseMaterial(){
 
@@ -56,7 +59,7 @@ class CourseMaterialRepositoryTest {
                 .teacher(teacher)
                 .build();
         course.addStudents(student);
-        courseMaterialRepository.save(course);
+        courseRepository.save(course);
     }
 }
  /* we will see cascading property --> it means to pass the properties or permission to our child
